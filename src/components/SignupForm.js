@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { auth, googleProvider, facebookProvider } from './firebase.js';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup } from "firebase/auth";
-import './SignupForm.css';
+import '../styles/SignupForm.css';
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
@@ -94,7 +94,7 @@ const SignupForm = () => {
     return (
         <div className="signup-container">
             <form onSubmit={handleEmailSignup} className="signup-form">
-                <h2>Sign Up</h2>
+                {/* <h2>Sign Up</h2> */}
                 <input
                     type="text"
                     name="firstName"
@@ -138,7 +138,7 @@ const SignupForm = () => {
                 <button type="submit" className="signup-btn">Sign Up</button>
             </form>
 
-            <div className="oauth-signup">
+            {/* <div className="oauth-signup">
                 <h3>Or sign up with</h3>
                 <button
                     onClick={() => handleOAuthSignup(googleProvider)}
@@ -152,7 +152,7 @@ const SignupForm = () => {
                 >
                     Facebook
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 };

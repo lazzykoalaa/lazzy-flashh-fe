@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import './HomePage.css';
+import '../styles/HomePage.css';
 
 const HomePage = ({ user, onLogout }) => {
     if (!user) {
