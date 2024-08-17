@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { auth, googleProvider, facebookProvider } from './firebase.js';
+import { useNavigate } from 'react-router-dom';
+import { signInWithPopup } from "firebase/auth";
 import './SignupForm.css';
 
 const SignupForm = () => {
@@ -11,6 +13,8 @@ const SignupForm = () => {
         password: '',
     });
 
+    const navigate = useNavigate(); // Define navigate using useNavigate hook
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -20,37 +24,57 @@ const SignupForm = () => {
 
     const handleEmailSignup = async (e) => {
         e.preventDefault();
-        const response = await fetch('/api/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
-
-        if (response.ok) {
-            alert('Signup successful');
-        } else {
-            alert('Signup failed');
+    
+        try {
+            const response = await fetch('http://localhost:8000/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            if (response.ok) {
+                alert('Signup successful! Welcome aboard.');
+            } else {
+                const errorData = await response.json();
+                alert(`Signup failed: ${errorData.detail || 'Unknown error occurred'}`);
+            }
+        } catch (error) {
+            console.error('Signup error:', error);
+            alert('An error occurred during signup. Please try again later.');
         }
     };
+    
 
     const handleOAuthSignup = async (provider) => {
         try {
-            const result = await auth.signInWithPopup(provider);
-            const { user } = result;
+            // Use signInWithPopup directly with the provided provider
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+    
+            // Extract user data from the OAuth result
             const oauthData = {
-                firstName: user.displayName.split(' ')[0],
-                lastName: user.displayName.split(' ').slice(1).join(' '),
-                username: user.email.split('@')[0],
+                firstName: user.displayName ? user.displayName.split(' ')[0] : '',
+                lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
+                username: user.email ? user.email.split('@')[0] : '',
                 email: user.email,
             };
-            const response = await fetch('/api/oauth_signup', {
+    
+            // Store the user data in localStorage
+            localStorage.setItem('user', JSON.stringify(oauthData));
+    
+            // Send the data to your backend API
+            const response = await fetch('http://localhost:8000/oauth_signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(oauthData),
             });
-
+    
+            // Handle the response
             if (response.ok) {
-                alert('OAuth signup successful');
+                // If signup was successful, redirect to the home page
+                navigate('/home');
             } else {
                 alert('OAuth signup failed');
             }
@@ -58,6 +82,13 @@ const SignupForm = () => {
             console.error('OAuth signup error:', error);
             alert('OAuth signup failed');
         }
+    };
+
+    const HandleGoogleSignup = async () => {
+        signInWithPopup(auth, googleProvider).then((data) => {
+            setFormData(data.user.email)
+            localStorage.setItem("email", data.user.email)
+        })
     };
 
     return (
