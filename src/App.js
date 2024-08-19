@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import HomePage from './components/HomePage';
 import AuthPage from './components/AuthPage';
 import Navbar from './components/Navbar';
+import Flashcards from './components/Flashcards';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/home" element={user ? <HomePage user={user} onLogout={handleLogout} /> : <Navigate to="/auth" />} />
                 <Route path="/auth" element={<AuthPage onLogin={handleLogin} onSignup={handleSignup} setUser={setUser} />} />
                 <Route path="/" element={<Navigate to={user ? "/home" : "/auth"} />} />
+                <Route path="/flashcards" element={<Flashcards/>} />
             </Routes>
         </Router>
     );
