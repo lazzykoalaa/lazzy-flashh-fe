@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import AuthPage from './components/AuthPage';
 import Navbar from './components/Navbar';
 
 function App() {
     const [user, setUser] = useState(null);
-
-    return (
-        <Router>
-            <AppContent user={user} setUser={setUser} />
-        </Router>
-    );
-}
-
-function AppContent({ user, setUser }) {
-    const navigate = useNavigate(); // Use useNavigate inside Router context
+    const [flashcards, setFlashcards] = useState([]);
+    const navigate = useNavigate(); // useNavigate is now safe to use
 
     const handleLogin = async (formData) => {
         const { email, password } = formData;
-
+        
         const response = await fetch('http://localhost:8000/login', {
             method: 'POST',
             headers: {
@@ -30,8 +22,7 @@ function AppContent({ user, setUser }) {
 
         if (response.ok) {
             const userData = await response.json();
-            setUser(formData);
-            console.log(userData);
+            setUser(userData);
             localStorage.setItem('user', JSON.stringify(userData)); // Store user data in localStorage
             navigate('/home'); // Redirect to home page
         } else {
@@ -54,7 +45,7 @@ function AppContent({ user, setUser }) {
             const newUser = await response.json();
             setUser(newUser);
             localStorage.setItem('user', JSON.stringify(newUser));
-            navigate('/home'); // Redirect to home page after signup
+            navigate('/home'); // Use navigate directly
         } else {
             alert('Signup failed');
         }
@@ -62,16 +53,56 @@ function AppContent({ user, setUser }) {
 
     const handleLogout = () => {
         setUser(null);
-        localStorage.removeItem('user'); // Clear user data from localStorage
-        navigate('/auth'); // Redirect to auth page after logout
+        localStorage.removeItem('user');
+        navigate('/auth'); // Use navigate directly
+    };
+
+    const handleFileUpload = async (file) => {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        const response = await fetch('http://localhost:8000/summarize', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            setFlashcards(result); // Set the flashcards data
+        } else {
+            alert('Failed to summarize the document');
+        }
     };
 
     return (
         <>
             {user && <Navbar onLogout={handleLogout} />}
             <Routes>
-                <Route path="/home" element={user ? <HomePage user={user} onLogout={handleLogout} /> : <Navigate to="/auth" />} />
-                <Route path="/auth" element={<AuthPage onLogin={handleLogin} onSignup={handleSignup} setUser={setUser} />} />
+                <Route
+                    path="/home"
+                    element={
+                        user ? (
+                            <HomePage
+                                user={user}
+                                onLogout={handleLogout}
+                                onFileUpload={handleFileUpload}
+                                flashcards={flashcards}
+                            />
+                        ) : (
+                            <Navigate to="/auth" />
+                        )
+                    }
+                />
+                <Route
+                    path="/auth"
+                    element={
+                        <AuthPage
+                            onLogin={handleLogin}
+                            onSignup={handleSignup}
+                            setUser={setUser}
+                        />
+                    }
+                />
                 <Route path="/" element={<Navigate to={user ? "/home" : "/auth"} />} />
             </Routes>
         </>
