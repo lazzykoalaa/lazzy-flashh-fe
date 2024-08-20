@@ -9,6 +9,8 @@ function Flashcards({ cards }) {
         frontCardStyle={{
           backgroundColor: "#2c3e50",  // Darker color for the front side
           borderRadius: "8px",         // Rounded corners
+          height: "22vw",              // Responsive height
+          width: "31vw",                // Fixed width
         }}
         frontContentStyle={{
           backgroundColor: "#34495e",  // Darker color for the front side
