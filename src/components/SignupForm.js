@@ -47,49 +47,49 @@ const SignupForm = () => {
     };
     
 
-    const handleOAuthSignup = async (provider) => {
-        try {
-            // Use signInWithPopup directly with the provided provider
-            const result = await signInWithPopup(auth, provider);
-            const user = result.user;
+    // const handleOAuthSignup = async (provider) => {
+    //     try {
+    //         // Use signInWithPopup directly with the provided provider
+    //         const result = await signInWithPopup(auth, provider);
+    //         const user = result.user;
     
-            // Extract user data from the OAuth result
-            const oauthData = {
-                firstName: user.displayName ? user.displayName.split(' ')[0] : '',
-                lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
-                username: user.email ? user.email.split('@')[0] : '',
-                email: user.email,
-            };
+    //         // Extract user data from the OAuth result
+    //         const oauthData = {
+    //             firstName: user.displayName ? user.displayName.split(' ')[0] : '',
+    //             lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
+    //             username: user.email ? user.email.split('@')[0] : '',
+    //             email: user.email,
+    //         };
     
-            // Store the user data in localStorage
-            localStorage.setItem('user', JSON.stringify(oauthData));
+    //         // Store the user data in localStorage
+    //         localStorage.setItem('user', JSON.stringify(oauthData));
     
-            // Send the data to your backend API
-            const response = await fetch('http://localhost:8000/oauth_signup', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(oauthData),
-            });
+    //         // Send the data to your backend API
+    //         const response = await fetch('http://localhost:8000/oauth_signup', {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(oauthData),
+    //         });
     
-            // Handle the response
-            if (response.ok) {
-                // If signup was successful, redirect to the home page
-                navigate('/home');
-            } else {
-                alert('OAuth signup failed');
-            }
-        } catch (error) {
-            console.error('OAuth signup error:', error);
-            alert('OAuth signup failed');
-        }
-    };
+    //         // Handle the response
+    //         if (response.ok) {
+    //             // If signup was successful, redirect to the home page
+    //             navigate('/home');
+    //         } else {
+    //             alert('OAuth signup failed');
+    //         }
+    //     } catch (error) {
+    //         console.error('OAuth signup error:', error);
+    //         alert('OAuth signup failed');
+    //     }
+    // };
 
-    const HandleGoogleSignup = async () => {
-        signInWithPopup(auth, googleProvider).then((data) => {
-            setFormData(data.user.email)
-            localStorage.setItem("email", data.user.email)
-        })
-    };
+    // const HandleGoogleSignup = async () => {
+    //     signInWithPopup(auth, googleProvider).then((data) => {
+    //         setFormData(data.user.email)
+    //         localStorage.setItem("email", data.user.email)
+    //     })
+    // };
 
     return (
         <div className="signup-container">

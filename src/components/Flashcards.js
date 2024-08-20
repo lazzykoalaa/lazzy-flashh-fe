@@ -7,10 +7,14 @@ function Flashcards({ cards }) {
       <FlashcardArray
         cards={cards}
         frontCardStyle={{
-          backgroundColor: "#2c3e50",  // Darker color for the front side
+          backgroundColor: "#2c3e57",  // Darker color for the front side
           borderRadius: "8px",         // Rounded corners
           height: "22vw",              // Responsive height
-          width: "31vw",                // Fixed width
+          width: "31vw",               // Fixed width
+          textAlign: "center",
+          display: "flex",             // Use Flexbox
+          justifyContent: "center",    // Center horizontally
+          alignItems: "center",        // Center vertically
         }}
         frontContentStyle={{
           backgroundColor: "#34495e",  // Darker color for the front side
