@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #20232A;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    background-color: #292C3B;
+    border: 1px solid #393E4A;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s;
+    width:300px;
+    line-height: 1.5; /* Adjust line-height for better vertical alignment */
+    box-sizing: border-box; /* Ensures padding is included in width/height */
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="email"]:focus,
+.signup-form input[type="password"]:focus {
+    border-color: #FF5349;
+}
+
+/* Placeholder text styling */
+.signup-form input::placeholder {
+    color: #b3b3b3;
+}
+
+/* Style the signup button */
+.signup-btn {
+    background-color: #FF5349;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    width: 50%;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+    line-height: 1.5;
+    margin-left: 70px;
+    text-align: center;
+
+}
+
+.signup-btn:hover {
+    background-color: #FF766B;
+}
+
+/* Style the OAuth buttons (if using them) */
+.oauth-signup {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.oauth-signup h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.oauth-btn {
+    background-color: #292C3B;
+    border: 1px solid #393E4A;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    width: calc(50% - 10px);
+    transition: background-color 0.3s;
+}
+
+.oauth-btn:hover {
+    background-color: #FF5349;
+}
+
+.google-btn {
+    background-color: #DB4437;
+}
+
+.facebook-btn {
+    background-color: #4267B2;
+}
+
+.google-btn:hover {
+    background-color: #E57368;
+}
+
+.facebook-btn:hover {
+    background-color: #6589C5;
+}
