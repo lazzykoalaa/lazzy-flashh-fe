@@ -4,66 +4,59 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
-  /* background-color: #121212; */
-  padding-top: 150vw;
+  padding-top: 100vw;
   color: #ffffff;
   font-family: 'Arial', sans-serif;
 }
 
-/* Navigation Bar Styling */
+/* Navigation Styling */
 .landing-nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 1rem 2rem;
-  background-color: #1f1f1f;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
+  background-color: #121212;
 }
 
-.logo {
-  font-size: 1.8rem;
+.landing-nav .logo {
+  font-size: 2rem;
   font-weight: bold;
 }
 
-.nav-links {
+.landing-nav .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover {
+.landing-nav .nav-links a {
   color: #00bcd4;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 /* Header Styling */
 .landing-header {
   text-align: center;
-  margin-top: 10rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
+  padding-top: 10rem;
 }
 
 .landing-header h1 {
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .landing-header p {
   font-size: 1.5rem;
   color: #bbbbbb;
+  margin-bottom: 2rem;
 }
 
 .landing-header button {
   background-color: #00bcd4;
   color: #000;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   border: none;
   border-radius: 0.5rem;
@@ -77,8 +70,9 @@
 
 /* Features Section Styling */
 .features {
-  width: 80%;
-  margin-bottom: 6rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 4rem;
   text-align: center;
 }
 
@@ -87,102 +81,86 @@
   margin-bottom: 2rem;
 }
 
-.features ul {
-  list-style: none;
-  padding: 0;
+.features-grid {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.features li {
-  display: flex;
-  align-items: center;
-  background: #1e1e1e;
-  padding: 1rem 2rem;
+.feature-item {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
-  font-size: 1.2rem;
+  width: calc(33% - 2rem);
+  box-sizing: border-box;
   text-align: left;
+  color: #ffffff;
 }
 
-.features li svg {
-  margin-right: 1rem;
+.feature-item p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.feature-item svg {
+  font-size: 2rem;
   color: #00bcd4;
-}
-
-.feature-description h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.feature-description p {
-  font-size: 1rem;
-  color: #bbbbbb;
 }
 
 /* Pricing Section Styling */
 .pricing {
-  width: 80%;
-  margin-bottom: 6rem;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 4rem;
 }
 
 .pricing h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-}
-
-.pricing-table {
-  width: 100%;
-  margin-bottom: 2rem;
-  border-collapse: collapse;
-}
-
-.pricing-table th, .pricing-table td {
-  padding: 1rem;
-  border: 1px solid #444;
   text-align: center;
 }
 
-.pricing-table th {
-  background-color: #333;
-  color: #00bcd4;
-  font-size: 1.2rem;
+.pricing-table {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
 }
 
-.pricing-table td {
+.pricing-plan {
   background-color: #1e1e1e;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.plan {
-  background: #1e1e1e;
   padding: 2rem;
-  margin-bottom: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  width: calc(50% - 1rem);
+  box-sizing: border-box;
 }
 
-.plan.premium {
-  background: #00bcd4;
-  color: #000;
-}
-
-.plan h3 {
+.pricing-plan h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #00bcd4;
 }
 
-.plan p {
-  font-size: 1.2rem;
+.pricing-plan ul {
+  list-style: none;
+  padding: 0;
   margin-bottom: 1.5rem;
 }
 
-.plan .price {
-  font-size: 2.5rem;
+.pricing-plan ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.pricing-plan .price {
+  font-size: 2rem;
   font-weight: bold;
+  text-align: center;
+}
+
+.pricing-plan.premium {
+  background-color: #00bcd4;
+  color: #000;
 }
 
 /* Contact Section Styling */
