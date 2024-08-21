@@ -1,154 +1,218 @@
-/* General Styling */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Container Styling */
-  .landing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8vw 4vw;
-    width: 100vw;
-    box-sizing: border-box;
-  }
-  
-  /* Header Styling */
-  .landing-header {
-    text-align: center;
-    margin-bottom: 6vw;
-    padding-top: 8vw;
-  }
-  
-  .landing-header h1 {
-    font-size: 8vw;
-    margin-bottom: 2vw;
-  }
-  
-  .landing-header p {
-    font-size: 4vw;
-    color: #bbbbbb;
-  }
-  
-  /* Features Section Styling */
-  .features {
-    width: 90vw;
-    max-width: 90vw;
-    margin-bottom: 6vw;
-    text-align: center;
-  }
-  
-  .features h2 {
-    font-size: 6vw;
-    margin-bottom: 4vw;
-  }
-  
-  .features ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .features li {
-    background: #1e1e1e;
-    margin-bottom: 3vw;
-    padding: 4vw;
-    border-radius: 2vw;
-    box-shadow: 0px 1vw 3vw rgba(0, 0, 0, 0.3);
-    font-size: 4vw;
-  }
-  
-  /* Pricing Section Styling */
-  .pricing {
-    width: 90vw;
-    max-width: 90vw;
-    margin-bottom: 6vw;
-    text-align: center;
-  }
-  
-  .pricing h2 {
-    font-size: 6vw;
-    margin-bottom: 4vw;
-  }
-  
-  .plan {
-    background: #1e1e1e;
-    padding: 6vw;
-    margin-bottom: 4vw;
-    border-radius: 2vw;
-    box-shadow: 0px 1vw 3vw rgba(0, 0, 0, 0.3);
-  }
-  
-  .plan h3 {
-    font-size: 5vw;
-    margin-bottom: 3vw;
-    color: #00bcd4;
-  }
-  
-  .plan p {
-    font-size: 3.5vw;
-    margin-bottom: 4vw;
-    color: #bbbbbb;
-  }
-  
-  .price {
-    font-size: 5.5vw;
-    font-weight: bold;
-  }
-  
-  /* Contact Us Section Styling */
-  .contact-us {
-    width: 90vw;
-    max-width: 90vw;
-    margin-bottom: 6vw;
-    text-align: center;
-  }
-  
-  .contact-us h2 {
-    font-size: 6vw;
-    margin-bottom: 4vw;
-  }
-  
-  .contact-us button {
-    background-color: #00bcd4;
-    color: #000;
-    padding: 4vw 8vw;
-    font-size: 4vw;
-    border: none;
-    border-radius: 2vw;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-us button:hover {
-    background-color: #0097a7;
-  }
-  
-  .contact-us button:focus {
-    outline: none;
-    box-shadow: 0px 0px 3vw #00bcd4;
-  }
-  
-  /* Responsive Styling */
-  @media (min-width: 768px) {
-    .landing-header h1 {
-      font-size: 5vw;
-    }
-  
-    .landing-header p, .features li, .plan p, .price, .contact-us button {
-      font-size: 2.5vw;
-    }
-  
-    .features h2, .pricing h2, .contact-us h2 {
-      font-size: 4vw;
-    }
-  
-    .plan h3 {
-      font-size: 3vw;
-    }
-  }
-  
+/* Container Styling */
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  /* background-color: #121212; */
+  padding-top: 150vw;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navigation Bar Styling */
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00bcd4;
+}
+
+/* Header Styling */
+.landing-header {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+}
+
+.landing-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.landing-header p {
+  font-size: 1.5rem;
+  color: #bbbbbb;
+}
+
+.landing-header button {
+  background-color: #00bcd4;
+  color: #000;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.landing-header button:hover {
+  background-color: #0097a7;
+}
+
+/* Features Section Styling */
+.features {
+  width: 80%;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.features li svg {
+  margin-right: 1rem;
+  color: #00bcd4;
+}
+
+.feature-description h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description p {
+  font-size: 1rem;
+  color: #bbbbbb;
+}
+
+/* Pricing Section Styling */
+.pricing {
+  width: 80%;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.pricing h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+}
+
+.pricing-table th, .pricing-table td {
+  padding: 1rem;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.pricing-table th {
+  background-color: #333;
+  color: #00bcd4;
+  font-size: 1.2rem;
+}
+
+.pricing-table td {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.plan {
+  background: #1e1e1e;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.plan.premium {
+  background: #00bcd4;
+  color: #000;
+}
+
+.plan h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.plan p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.plan .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Contact Section Styling */
+.contact-us {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.contact-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-us p {
+  font-size: 1.5rem;
+  color: #bbbbbb;
+  margin-bottom: 2rem;
+}
+
+.contact-us button {
+  background-color: #00bcd4;
+  color: #000;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+  background-color: #0097a7;
+}
