@@ -1,24 +1,4 @@
 /* HomePage.css (Dark Theme) */
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 0;
-}
-
-.home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: #1e1e1e;
-    color: #ffffff;
-}
-
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -186,9 +166,9 @@ width: 30vw;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
-    padding: 20px;
-    background-color: #121212;
+    height: 100vw;
+    padding-top: 30vw;
+    background-color: transparent;
     color: #ffffff;
 }
 
