@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
 import HomePage from './components/HomePage';
 import AuthPage from './components/AuthPage';
 import Navbar from './components/Navbar';
@@ -104,7 +105,11 @@ function App() {
                     }
                 />
                 <Route path="/" element={<Navigate to={user ? "/home" : "/auth"} />} />
+                <Route path="/landing" element={<LandingPage/>}>
+
+                </Route>
             </Routes>
+            
         </>
     );
 }
