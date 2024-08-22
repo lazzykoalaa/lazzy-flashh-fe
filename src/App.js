@@ -123,6 +123,8 @@ function App() {
                     />
                     <Route path="/" element={<Navigate to={user ? "/home" : "/landing"} />} />
                     <Route path="/landing" element={<LandingPage />} />
+                    <Route path="/signup" element={<AuthPage onSignup={handleSignup} Login={false}/>} />
+                    <Route path="/login" element={<AuthPage onLogin={handleLogin} Login={true}/>} />
                 </Routes>
             ) : (
                 <div>Loading...</div> // Optional: Add a loading indicator until isLoaded is true
