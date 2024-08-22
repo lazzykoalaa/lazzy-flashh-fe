@@ -4,6 +4,8 @@ import LandingPage from './components/LandingPage';
 import HomePage from './components/HomePage';
 import AuthPage from './components/AuthPage';
 import Navbar from './components/Navbar';
+import SignupForm from './components/SignupForm';
+import LoginForm from './components/LoginForm';
 
 function App() {
     const [user, setUser] = useState(null);
@@ -106,8 +108,10 @@ function App() {
                 />
                 <Route path="/" element={<Navigate to={user ? "/home" : "/auth"} />} />
                 <Route path="/landing" element={<LandingPage/>}>
-
                 </Route>
+                <Route path="/signup" element={<SignupForm onSignup={handleSignup} />} />
+                <Route path="/signin" element={<LoginForm onLogin={handleLogin} />} />
+
             </Routes>
             
         </>

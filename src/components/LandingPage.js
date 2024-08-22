@@ -1,9 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaRobot, FaFilePdf, FaEye, FaDownload, FaPaperPlane } from 'react-icons/fa';
 import '../styles/LandingPage.css';
-import { FaBeer, FaApple } from 'react-icons/fa';
+import '../styles/HomePage.css';
+import '../styles/SignupForm.css';
+import "../styles/login.css";
+
 
 const LandingPage = () => {
+  const navigate = useNavigate(); 
   const handleGetStarted = () => {
     // Navigate to the get started page or section
   };
@@ -11,18 +16,29 @@ const LandingPage = () => {
   return (
     <div className="landing-container">
       <nav className="landing-nav">
-        <div className="logo">Lazzy Flashh</div>
+      <div className="logo">
+      <img src='/assets/img/logo/main-logo.png' alt="Logo" className="logo" />
+      </div>
         <ul className="nav-links">
           <li><a href="#features">Features</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
+        <div className="auth-buttons">
+        <button className="btn-signin" onClick={() => navigate('/signin')}>Sign In</button>
+        <button className="btn-signup" onClick={() => navigate('/signup')}>Sign Up</button>
+        </div>
       </nav>
 
       <header className="landing-header">
-        <h1>Create Flashcards Effortlessly</h1>
+      <div className="mainHeading">
+        <h1>
+        Lazzy Flashh
+        </h1>
+        </div>
+        <h1 className="subHeader">Create Flashcards Effortlessly</h1>
         <p>Upload your PDF files and let AI do the magic.</p>
-        <button onClick={handleGetStarted}>Get Started</button>
+        <button onClick={() => navigate('/home')}>Get Started</button>
       </header>
 
       <section id="features" className="features">
@@ -56,7 +72,7 @@ const LandingPage = () => {
         <div className="pricing-table">
           <div className="pricing-plan">
             <h3>Free Plan</h3>
-            <ul>
+            <ul className='list'>
               <li>Basic AI flashcard generation</li>
               <li>Single format support</li>
               <li>Limited real-time preview</li>
@@ -67,7 +83,7 @@ const LandingPage = () => {
           </div>
           <div className="pricing-plan premium">
             <h3 className='premium-heading'>Premium Plan</h3>
-            <ul>
+            <ul className='list'>
               <li>Advanced AI flashcard generation</li>
               <li>Multi-format support</li>
               <li>Full real-time preview</li>
@@ -76,7 +92,7 @@ const LandingPage = () => {
               <li>Personalized flashcards</li>
             </ul>
             <div className="price">₹799/month</div>
-            <div><button onClick={handleGetStarted}>Get Premium</button></div>
+            <div ><button className="getPremium" onClick={handleGetStarted}>Get Premium</button></div>
           </div>
         </div>
       </section>
@@ -88,8 +104,7 @@ const LandingPage = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
-              <ul className="d-flex align-items-center justify-content-center justify-content-md-start cs-14-social-icons">
-                <li>
+              <div className="d-flex align-items-center justify-content-center justify-content-md-start cs-14-social-icons">
                   <a
                     href="https://www.instagram.com/lazzykoalaa/"
                     target="_blank"
@@ -100,8 +115,6 @@ const LandingPage = () => {
                       alt="Instagram"
                     />
                   </a>
-                </li>
-                <li>
                   <a
                     href="https://www.linkedin.com/company/lazzykoalaa/"
                     target="_blank"
@@ -112,8 +125,6 @@ const LandingPage = () => {
                       alt="LinkedIn"
                     />
                   </a>
-                </li>
-                <li>
                   <a
                     href="https://www.youtube.com/channel/UCIC2lUnISguxOlgOieAXPVQ"
                     target="_blank"
@@ -124,8 +135,7 @@ const LandingPage = () => {
                       alt="YouTube"
                     />
                   </a>
-                </li>
-              </ul>
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <div className="cs-14-copyright text-right">
