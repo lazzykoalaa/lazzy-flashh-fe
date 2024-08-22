@@ -41,7 +41,7 @@ const GoogleAuthButton = ({ setUser, isSignup }) => {
 
     return (
         <button onClick={handleGoogleSignup} className="oauth-btn google-btn" style={{textAlign: 'center', width: '80%'}}>
-            {isSignup ? 'Sign up with Google' : 'Login with Google'}
+            {isSignup ? 'Sign Up with Google' : 'Login with Google'}
         </button>
     );
 };
