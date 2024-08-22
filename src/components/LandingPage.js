@@ -6,6 +6,7 @@ import { FaBeer, FaApple } from 'react-icons/fa';
 const LandingPage = () => {
   const handleGetStarted = () => {
     // Navigate to the get started page or section
+    window.location.href = '/auth';
   };
 
   return (

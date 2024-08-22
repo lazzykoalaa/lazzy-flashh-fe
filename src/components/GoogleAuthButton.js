@@ -2,8 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, googleProvider } from './firebase';
 import { signInWithPopup } from 'firebase/auth';
+import { CgEnter } from 'react-icons/cg';
 
-const GoogleAuthButton = ({ setUser }) => {
+const GoogleAuthButton = ({ setUser, isSignup }) => {
     const navigate = useNavigate();
 
     const handleGoogleSignup = async () => {
@@ -11,9 +12,10 @@ const GoogleAuthButton = ({ setUser }) => {
             const result = await signInWithPopup(auth, googleProvider);
             const { user } = result;
 
+
             const oauthData = {
-                firstName: user.displayName.split(' ')[0],
-                lastName: user.displayName.split(' ').slice(1).join(' '),
+                first_name: user.displayName.split(' ')[0],
+                last_name: user.displayName.split(' ').slice(1).join(' '),
                 username: user.email.split('@')[0],
                 email: user.email,
             };
@@ -38,8 +40,8 @@ const GoogleAuthButton = ({ setUser }) => {
     };
 
     return (
-        <button onClick={handleGoogleSignup} className="oauth-btn google-btn">
-            Sign in with Google
+        <button onClick={handleGoogleSignup} className="oauth-btn google-btn" style={{textAlign: 'center', width: '80%'}}>
+            {isSignup ? 'Sign up with Google' : 'Login with Google'}
         </button>
     );
 };

@@ -6,8 +6,8 @@ import '../styles/SignupForm.css';
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         username: '',
         email: '',
         password: '',
@@ -99,7 +99,7 @@ const SignupForm = () => {
                     type="text"
                     name="firstName"
                     placeholder="First Name"
-                    value={formData.firstName}
+                    value={formData.first_name}
                     onChange={handleChange}
                     required
                 />
@@ -107,7 +107,7 @@ const SignupForm = () => {
                     type="text"
                     name="lastName"
                     placeholder="Last Name"
-                    value={formData.lastName}
+                    value={formData.last_name}
                     onChange={handleChange}
                     required
                 />
@@ -135,7 +135,7 @@ const SignupForm = () => {
                     onChange={handleChange}
                     required
                 />
-                <button type="submit" className="signup-btn">Sign Up</button>
+                <button type="submit" className="auth-btn">Sign Up</button>
             </form>
 
             {/* <div className="oauth-signup">

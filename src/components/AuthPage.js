@@ -16,12 +16,17 @@ const AuthPage = ({ onLogin, onSignup, setUser }) => {
             <div className="auth-box">
                 <h2>{isLogin ? 'Login' : 'Sign Up'}</h2>
                 {isLogin ? (
-                    <LoginForm onLogin={onLogin} />
+                    <div>
+                        <LoginForm onLogin={onLogin} />
+                        <GoogleAuthButton setUser={setUser} isSignup={true}/> 
+                    </div>
                 ) : (
-                    <SignupForm onSignup={onSignup} />
+                    <div>
+                        <SignupForm onSignup={onSignup} />
+                        <GoogleAuthButton setUser={setUser} isSignup={false}/> 
+                    </div>
                 )}
-                <GoogleAuthButton setUser={setUser} /> {/* Pass setUser to GoogleAuthButton */}
-                <button onClick={toggleAuthMode} className="switch-btn">
+                <button onClick={toggleAuthMode} className="auth-btn" style={{width: '80%', textAlign:'center', marginLeft:'1vw'}}>
                     {isLogin ? 'Switch to Sign Up' : 'Switch to Login'}
                 </button>
             </div>
