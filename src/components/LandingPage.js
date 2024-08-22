@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaRobot, FaFilePdf, FaEye, FaDownload, FaPaperPlane } from 'react-icons/fa';
 import '../styles/LandingPage.css';
+import { FaBeer, FaApple } from 'react-icons/fa';
 
 const LandingPage = () => {
   const handleGetStarted = () => {
@@ -65,7 +66,7 @@ const LandingPage = () => {
             <div className="price">₹0/month</div>
           </div>
           <div className="pricing-plan premium">
-            <h3>Premium Plan</h3>
+            <h3 className='premium-heading'>Premium Plan</h3>
             <ul>
               <li>Advanced AI flashcard generation</li>
               <li>Multi-format support</li>
@@ -75,6 +76,7 @@ const LandingPage = () => {
               <li>Personalized flashcards</li>
             </ul>
             <div className="price">₹799/month</div>
+            <div><button onClick={handleGetStarted}>Get Premium</button></div>
           </div>
         </div>
       </section>
@@ -82,7 +84,65 @@ const LandingPage = () => {
       <section id="contact" className="contact-us">
         <h2>Contact Us</h2>
         <p>Have questions? Reach out to the Lazzy Koalaa team!</p>
-        <button onClick={handleGetStarted}>Get Started</button>
+        <div className="cs-14-footer space-pt--25 space-pb--25" style={{width: "100%", textAlign: "center" }}>
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6">
+              <ul className="d-flex align-items-center justify-content-center justify-content-md-start cs-14-social-icons">
+                <li>
+                  <a
+                    href="https://www.instagram.com/lazzykoalaa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={process.env.PUBLIC_URL + "/assets/img/icons/instagram-01.svg"}
+                      alt="Instagram"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/lazzykoalaa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={process.env.PUBLIC_URL + "/assets/img/icons/linkedin-01.svg"}
+                      alt="LinkedIn"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCIC2lUnISguxOlgOieAXPVQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={process.env.PUBLIC_URL + "/assets/img/icons/youtube-01.svg"}
+                      alt="YouTube"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="cs-14-copyright text-right">
+                &copy; {new Date().getFullYear()}{" "}
+                <a
+                  href="mailto:lazzykoalaa@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  lazzykoalaa
+                </a>
+                , all rights reserved
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </section>
     </div>
   );
