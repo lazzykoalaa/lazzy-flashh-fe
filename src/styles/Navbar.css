@@ -1,32 +1,100 @@
-/* Navbar.css */
-
+/* General Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    background-color: #3f51b5;
+    padding: 0 4vw;
+    background-color: #1c1c1c;
     color: white;
-    height: 60px;
+    height: 13vh;
+    width: 100vw;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
 }
 
-.navbar h1 {
-    font-size: 24px;
-    font-weight: 500;
-    margin: 0;
+.logo img {
+    max-width: 8vw;
+    height: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3vw;
+}
+
+.nav-links li a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 1.5vw;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.btn-signin,
+.btn-signup,
+.logout-btn {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 0.8vw 1.6vw;
+    border-radius: 0.4vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-signin:hover,
+.btn-signup:hover,
+.logout-btn:hover {
+    background-color: #5c6bc0;
+    transform: scale(1.05);
 }
 
 .logout-btn {
     background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .logout-btn:hover {
     background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 2vw;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 2vw;
+        margin-top: 2vh;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        gap: 2vw;
+        margin-top: 2vh;
+    }
+
+    .btn-signin,
+    .btn-signup,
+    .logout-btn {
+        padding: 1.5vw 3vw;
+        font-size: 2vw;
+    }
+
+    .logo img {
+        max-width: 15vw;
+    }
 }

@@ -26,7 +26,7 @@ function App() {
 
     const handleLogin = async (formData) => {
         const { email, password } = formData;
-    
+
         const response = await fetch('https://lazzy-flashh-backend.vercel.app/login', {
             method: 'POST',
             headers: {
@@ -34,13 +34,13 @@ function App() {
             },
             body: JSON.stringify({ email, password }),
         });
-    
+
         if (response.ok) {
             const { access_token, user } = await response.json();
             localStorage.setItem('access_token', access_token);
             localStorage.setItem('user', JSON.stringify(user));
             console.log('login successful and token set', access_token);
-            setUser(user);  // Update user state with the returned user data
+            setUser(true);
             navigate('/home');
         } else {
             alert('Login failed');
@@ -48,14 +48,14 @@ function App() {
     };
 
     const handleSignup = async (formData) => {
-        const { first_name, last_name, username, email, password } = formData;
+        const { firstName, lastName, username, email, password } = formData;
 
         const response = await fetch('https://lazzy-flashh-backend.vercel.app/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ first_name, last_name, username, email, password }),
+            body: JSON.stringify({ firstName, lastName, username, email, password }),
         });
 
         if (response.ok) {

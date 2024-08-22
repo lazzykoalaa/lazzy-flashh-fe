@@ -4,8 +4,9 @@ import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
 import '../styles/AuthPage.css';
 
-const AuthPage = ({ onLogin, onSignup, setUser }) => {
-    const [isLogin, setIsLogin] = useState(true);
+const AuthPage = ({ onLogin, onSignup, setUser , Login}) => {
+    // const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(Login);
 
     const toggleAuthMode = () => {
         setIsLogin(!isLogin);

@@ -1,10 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaRobot, FaFilePdf, FaEye, FaDownload, FaPaperPlane } from 'react-icons/fa';
+import Navbar from './Navbar';
+
 import '../styles/LandingPage.css';
 import '../styles/HomePage.css';
 import '../styles/SignupForm.css';
 import "../styles/login.css";
+
 
 
 const LandingPage = () => {
@@ -16,21 +19,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-container">
-      <nav className="landing-nav">
-      <div className="logo">
-      <img src='/assets/img/logo/main-logo.png' alt="Logo" className="logo" />
-      </div>
-        <ul className="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul>
-        <div className="auth-buttons">
-        <button className="btn-signin" onClick={() => navigate('/signin')}>Sign In</button>
-        <button className="btn-signup" onClick={() => navigate('/signup')}>Sign Up</button>
-        </div>
-      </nav>
-
+      <Navbar />
       <header className="landing-header">
       <div className="mainHeading">
         <h1>

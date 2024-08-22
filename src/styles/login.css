@@ -1,12 +1,12 @@
 /* Ensure the html and body cover the full viewport height */
 html, body {
-    height: 40vw;
+    /* height: 40vw; */
     margin: 0;
     padding: 0;
     background-color: #20232A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: fixed; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 /* Center the form on the page */

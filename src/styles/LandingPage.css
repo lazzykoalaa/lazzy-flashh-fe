@@ -1,41 +1,15 @@
 /* Container Styling */
 .landing-container {
+  /* position: absolute; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 3.33vw 1.67vw; 
-  padding-top: 143vw; 
   color: #ffffff;
   font-family: 'Arial', sans-serif;
   box-sizing: border-box; 
   overflow: hidden; 
   min-height: 100vh; 
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .landing-container {
-    padding-top: 208vw; 
-  }
-}
-
-@media (max-width: 1200px) {
-  .landing-container {
-    padding-top: 108vw; 
-  }
-}
-
-@media (max-width: 768px) {
-  .landing-container {
-    padding-top: 40vw; 
-  }
-}
-
-@media (max-width: 480px) {
-  .landing-container {
-    padding-top: 540vw; 
-  }
+  /* padding: 3vw 1.5vw; */
 }
 
 /* Navigation Styling */
@@ -43,8 +17,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding-top: 2rem;
-  padding: 1rem 2rem;
+  padding: 2vw;
   background-color: #121212;
 }
 
@@ -54,53 +27,52 @@
 }
 
 .landing-nav .heading {
-  font-size: 3rem;
+  font-size: 2.5vw;
   font-weight: bold;
 }
 
 .landing-nav .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2vw;
 }
 
 .landing-nav .nav-links a {
   color: #00bcd4;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
 }
 
 /* Header Styling */
 .landing-header {
   text-align: center;
-  margin-bottom: 12rem;
-  padding-top: 15rem;
+  margin-bottom: 12vw;
+  padding-top: 15vw;
 }
 
 .mainHeading h1 {
-  font-size: 4rem;
+  font-size: 4vw;
 }
 
 .subHeader {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.5vw;
+  margin-bottom: 1vw;
 }
 
 .landing-header p {
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   color: #bbbbbb;
-  margin-bottom: 2rem;
+  margin-bottom: 2vw;
 }
 
 .landing-header button {
   background-color: #00bcd4;
   color: #000;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 0.5rem;
+  padding: 1.5vw 3vw;
+  font-size: 1.2vw;
+  border-radius: 0.5vw;
   cursor: pointer;
-  margin-bottom: 5rem;
+  margin-bottom: 5vw;
   transition: background-color 0.3s ease;
 }
 
@@ -108,67 +80,25 @@
   background-color: #0097a7;
 }
 
+/* Auth Buttons Styling */
 .auth-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.04vw; 
-  margin-top: 1.04vw; 
+  gap: 1vw; 
+  margin-top: 1vw; 
 }
 
 .btn-signin,
 .btn-signup {
-  padding: 0.42vw 0.04vw; 
-  font-size: 14px; 
-  border: 0.1vw solid #4a90e2; 
-  border-radius: 0.26vw; 
+  padding: 0.5vw 1vw; 
+  font-size: 1.5vw; 
+  border: 0.2vw solid #4a90e2; 
+  border-radius: 0.3vw; 
   cursor: pointer;
   transition: all 0.3s ease;
-  width: auto; 
-  min-width: 80px; 
-  max-width: 150px;
+  min-width: 10vw;
 }
 
-/* Media query for screens smaller than 768px (tablets and phones) */
-@media (max-width: 768px) {
-  .landing-header {
-    padding-top: 10rem; 
-  }
-
-  .btn-signin,
-  .btn-signup {
-    padding: 2vw 4vw; 
-    font-size: 3.5vw; 
-    min-width: 80px; 
-    max-width: 150px;
-  }
-
-  .auth-buttons {
-    gap: 2vw; 
-    margin-top: 2vw; 
-  }
-}
-
-/* Media query for screens smaller than 480px (mobile devices) */
-@media (max-width: 480px) {
-  .landing-header {
-    padding-top: 8rem; 
-  }
-
-  .btn-signin,
-  .btn-signup {
-    padding: 3vw 6vw;
-    font-size: 4vw;
-    min-width: 60px;
-    max-width: 120px; 
-  }
-
-  .auth-buttons {
-    gap: 3vw; 
-    margin-top: 3vw; 
-  }
-}
-
-/* Button Styling */
 .btn-signin {
   background-color: #00bcd4;
   color: white;
@@ -192,89 +122,89 @@
 /* Features Section Styling */
 .features {
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: 12rem;
+  max-width: 80vw;
+  margin-bottom: 12vw;
   text-align: center;
 }
 
 .features h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2.5vw;
+  margin-bottom: 2vw;
 }
 
 .features-grid {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 3vw;
 }
 
 .feature-item {
   background-color: #1e1e1e;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  width: calc(33% - 2rem);
+  padding: 1.5vw;
+  border-radius: 0.5vw;
+  width: calc(33% - 2vw);
   box-sizing: border-box;
   text-align: left;
   color: #ffffff;
 }
 
 .feature-item p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  margin-top: 1vw;
+  font-size: 1.2vw;
 }
 
 .feature-item svg {
-  font-size: 2rem;
+  font-size: 2vw;
   color: #00bcd4;
 }
 
 /* Pricing Section Styling */
 .pricing {
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: 11rem;
+  max-width: 80vw;
+  margin-bottom: 11vw;
 }
 
 .pricing h2 {
-  font-size: 3rem;
-  margin-bottom: 5rem;
+  font-size: 3vw;
+  margin-bottom: 5vw;
   text-align: center;
 }
 
 .pricing-table {
   display: flex;
   justify-content: space-around;
-  gap: 2rem;
+  gap: 2vw;
 }
 
 .pricing-plan {
   background-color: #1e1e1e;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  width: calc(50% - 1rem);
+  padding: 2vw;
+  border-radius: 0.5vw;
+  width: calc(50% - 2vw);
   box-sizing: border-box;
 }
 
 .pricing-plan h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2vw;
+  margin-bottom: 1vw;
   color: #00bcd4;
 }
 
 .pricing-plan ul {
   list-style: none;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5vw;
 }
 
 .pricing-plan ul li {
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  margin-bottom: 0.8vw;
+  font-size: 1.2vw;
 }
 
 .pricing-plan .price {
-  font-size: 2rem;
+  font-size: 2vw;
   font-weight: bold;
   text-align: center;
 }
@@ -282,10 +212,6 @@
 .pricing-plan.premium {
   background-color: #00bcd4;
   color: #000;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 h3.premium-heading {
@@ -294,19 +220,19 @@ h3.premium-heading {
 
 .list {
   display: flex;
-  text-align: justify;
   flex-direction: column;
   justify-content: center;
+  text-align: justify;
 }
 
 .getPremium {
-  padding: 0.52vw 1.04vw; 
+  padding: 0.5vw 1vw;
   margin: 2vw 1vw;
   display: flex;
   justify-content: center;
-  font-size: 0.83vw; 
-  border: 0.1vw solid #000000; 
-  border-radius: 0.26vw; 
+  font-size: 1vw; 
+  border: 0.2vw solid #000000; 
+  border-radius: 0.5vw; 
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -314,27 +240,26 @@ h3.premium-heading {
 /* Contact Section Styling */
 .contact-us {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 6vw;
 }
 
 .contact-us h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 2.5vw;
+  margin-bottom: 2vw;
 }
 
 .contact-us p {
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   color: #bbbbbb;
-  margin-bottom: 2rem;
+  margin-bottom: 2vw;
 }
 
 .contact-us button {
   background-color: #00bcd4;
   color: #000;
-  padding: 0.8rem 2rem;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 0.5rem;
+  padding: 1vw 2vw;
+  font-size: 1.5vw;
+  border-radius: 0.5vw;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -345,79 +270,40 @@ h3.premium-heading {
 
 /* Footer Styling */
 .cs-14-footer {
-  align-items: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-  z-index: 2;
-  padding: 1rem; /* Ensure footer has padding */
-}
-
-@media (max-width: 1200px) { 
-  .cs-14-footer {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-  }
-}
-
-@media (max-width: 768px) { 
-  .cs-14-footer {
-    align-items: center;
-  }
-}
-
-@media (max-width: 576px) { 
-  .cs-14-footer {
-    align-items: center;
-  }
+  padding: 2vw;
+  box-sizing: border-box;
 }
 
 .cs-14-footer img {
-  max-width: 100px; 
+  max-width: 10vw; 
   height: auto;
-  margin: 0 1rem; 
+  margin: 1vw;
 }
 
 .cs-14-footer .text, .cs-14-footer .text a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1rem;
-  margin: 0 1rem;
+  font-size: 1.5vw;
+  margin: 1vw;
 }
 
 .cs-14-footer .text a:hover {
   color: #00bcd4;
 }
 
-/* Common Button Styling */
-button {
-  cursor: pointer;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Additional Styling */
-.hidden {
-  display: none;
-}
-
-
 /* Social Icons Styling */
 .cs-14-social-icons {
   display: flex;
-  gap: 1rem; 
-  padding-bottom: 3rem; 
-}
-
-.cs-14-social-icons a {
-  display: inline-block; 
+  gap: 1vw; 
+  padding-bottom: 3vw; 
 }
 
 .cs-14-social-icons img {
-  width: 2.5rem;
+  width: 2.5vw;
   height: auto; 
   filter: invert(1) brightness(80); 
   transition: filter 0.4s ease; 
@@ -425,4 +311,17 @@ button {
 
 .cs-14-social-icons img:hover {
   filter: invert(1) brightness(30); 
+}
+
+/* Additional Styling */
+button {
+  cursor: pointer;
+  border-radius: 0.5vw;
+  padding: 1vw 2vw;
+  font-size: 1.5vw;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hidden {
+  display: none;
 }
