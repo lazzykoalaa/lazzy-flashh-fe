@@ -18,7 +18,7 @@ const GoogleAuthButton = ({ setUser }) => {
                 email: user.email,
             };
 
-            const response = await fetch('http://localhost:8000/oauth_signup', {
+            const response = await fetch('https://lazzy-flashh-backend.vercel.app/oauth_signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(oauthData),

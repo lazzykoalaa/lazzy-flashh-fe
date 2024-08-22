@@ -26,7 +26,7 @@ const SignupForm = () => {
         e.preventDefault();
     
         try {
-            const response = await fetch('http://localhost:8000/signup', {
+            const response = await fetch('https://lazzy-flashh-backend.vercel.app/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const SignupForm = () => {
     //         localStorage.setItem('user', JSON.stringify(oauthData));
     
     //         // Send the data to your backend API
-    //         const response = await fetch('http://localhost:8000/oauth_signup', {
+    //         const response = await fetch('https://lazzy-flashh-backend.vercel.app/oauth_signup', {
     //             method: 'POST',
     //             headers: { 'Content-Type': 'application/json' },
     //             body: JSON.stringify(oauthData),
