@@ -11,6 +11,7 @@ const LandingPage = () => {
   const navigate = useNavigate(); 
   const handleGetStarted = () => {
     // Navigate to the get started page or section
+    window.location.href = '/auth';
   };
 
   return (

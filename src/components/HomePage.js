@@ -70,7 +70,7 @@ const HomePage = ({ user, onLogout, onFileUpload, flashcards }) => {
 
     return (
         <div className="home-container">
-            <h1>Welcome, {user.firstName} {user.lastName}!</h1>
+            <h1>Welcome, {user.first_name} {user.last_name}!</h1>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
             <button onClick={onLogout} className="logout-btn">Log Out</button>

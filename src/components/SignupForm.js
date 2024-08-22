@@ -6,8 +6,8 @@ import '../styles/SignupForm.css';
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         username: '',
         email: '',
         password: '',
@@ -26,7 +26,7 @@ const SignupForm = () => {
         e.preventDefault();
     
         try {
-            const response = await fetch('http://localhost:8000/signup', {
+            const response = await fetch('https://lazzy-flashh-backend.vercel.app/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const SignupForm = () => {
     //         localStorage.setItem('user', JSON.stringify(oauthData));
     
     //         // Send the data to your backend API
-    //         const response = await fetch('http://localhost:8000/oauth_signup', {
+    //         const response = await fetch('https://lazzy-flashh-backend.vercel.app/oauth_signup', {
     //             method: 'POST',
     //             headers: { 'Content-Type': 'application/json' },
     //             body: JSON.stringify(oauthData),
@@ -99,7 +99,7 @@ const SignupForm = () => {
                     type="text"
                     name="firstName"
                     placeholder="First Name"
-                    value={formData.firstName}
+                    value={formData.first_name}
                     onChange={handleChange}
                     required
                 />
@@ -107,7 +107,7 @@ const SignupForm = () => {
                     type="text"
                     name="lastName"
                     placeholder="Last Name"
-                    value={formData.lastName}
+                    value={formData.last_name}
                     onChange={handleChange}
                     required
                 />
@@ -135,7 +135,7 @@ const SignupForm = () => {
                     onChange={handleChange}
                     required
                 />
-                <button type="submit" className="signup-btn">Sign Up</button>
+                <button type="submit" className="auth-btn">Sign Up</button>
             </form>
 
             {/* <div className="oauth-signup">
